@@ -13,6 +13,14 @@
 </head>
 
 <body>
+  <div class = "container">
+  <div class = "test">
+    <img src = "assets\images\pattern-lines.svg" alt = "fundo" style = "position:absolute;">
+
+  </div>
+  <div class = "imagens">
+    <img src="assets/images/pattern-squiggly-line-top.svg" alt="Imagem" style="position:absolute;">
+  </div>
   <div class = "centro">
     <img src="assets/images/logo-full.svg" alt="codingconf" style="padding: 1%;">
     <h1 style = "margin-bottom: 0%;">Your Journey to Coding Conf</h1>
@@ -25,8 +33,9 @@
         ondrop="dropHandler(event);"
         ondragover="dragOverHandler(event);">
           <div id="file-list"></div>
-        <p>Drag one or more files to this <i>drop zone</i>.</p>
+        <p>Drag and drop or click to upload.</p>
       </div>
+      <p style="color: rgba(255, 255, 255, 0.3); font-size: smaller;">Upload your photo(JPG or PNG, max size: 500KB).</p>
 
       <div class= "input">
         <p>Full Name</p>
@@ -39,8 +48,8 @@
         <p>Github Username</p>
         <input type = "text" id = "github" class = "input">
         <label for="github">@yourusename</label>
-        <button>Generate My Ticket</button>
       </div>
+      <button>Generate My Ticket</button>
     </section>
   </div>
 
@@ -49,5 +58,6 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+</div>
 </body>
 </html>

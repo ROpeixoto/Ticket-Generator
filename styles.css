@@ -1,3 +1,8 @@
+html{
+    max-width: 1440px;
+    width:100%;
+    margin:0 auto;
+}
 body{
     background-image: url('assets/images/background-desktop.png');
     background-size: cover;
@@ -7,6 +12,10 @@ body{
 
 h1{
     font-size:50px;
+}
+div.imagens{
+display:flex;
+flex-direction: row-reverse;
 }
 .centro{
     color: aliceblue;
@@ -21,7 +30,7 @@ section{
     width:100px auto;
     height:auto;
     color:white;
-    margin-left: 130px;
+    margin-left: 0px;
 }
 
 div.input{
@@ -31,22 +40,33 @@ div.input{
 
 div.input label{
     font-size:20px;
-    margin-top: 2%;
+    margin: 10px;
+    margin-left: 15px;
     position:absolute;
     left:0;
     cursor:text;
     transition:0.5s ease-in-out;
-    color: black;
+    color: white;
 }
 
 div.input .input{
     outline:0;
     padding: 10px;
     width: 350px;
+    height: 25px;
+    border-color: rgba(255, 255, 255, 0.2);
+    background-color: hsla(245, 15%, 58%,0.1);
+    color: white;
+    border-radius: 10px;
 }
 
 #drop_zone {
-    border: 5px solid blue;
+    border: 2px;
+    border-color: rgba(255, 255, 255, 0.2);
+    background-color: hsla(245, 15%, 58%,0.1);;
+    border-radius: 10px;
+    border-style: dashed;
+    backdrop-filter: blur(1.5px); 
     width: 305px;
     height: 100px;
     padding: 30px;
