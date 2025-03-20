@@ -14,26 +14,34 @@
 
 <body>
   <div class = "centro">
-    <h1>Your Journey to Coding Conf</h1>
-    <h1>2025 Starts Here!</h1>
-   <section id="1">
-    <p>Upload Avatar</p>
+    <img src="assets/images/logo-full.svg" alt="codingconf" style="padding: 1%;">
+    <h1 style = "margin-bottom: 0%;">Your Journey to Coding Conf</h1>
+    <h1 style="margin-top: 0%;">2025 Starts Here!</h1>
+    <section id="1">
+      <p>Upload Avatar</p>
 
       <div
-      id="drop_zone"
-      ondrop="dropHandler(event);"
-      ondragover="dragOverHandler(event);">
-      <div id="file-list"></div>
-      <p>Drag one or more files to this <i>drop zone</i>.</p>
+        id="drop_zone"
+        ondrop="dropHandler(event);"
+        ondragover="dragOverHandler(event);">
+          <div id="file-list"></div>
+        <p>Drag one or more files to this <i>drop zone</i>.</p>
       </div>
 
-    <p>Full Name</p>
-    <input class = "join1">
-    <p>Email Address</p>
-    <input class = "join2">
-    <p>Github Username</p>
-    <input class = "join3">
-   </section>
+      <div class= "input">
+        <p>Full Name</p>
+        <input type = "text"  id = "nome" class = "input">
+        <p>Email Address</p>
+
+        <input type = "text" id = "email" class = "input">
+        <label for="email">example@email.com</label>
+
+        <p>Github Username</p>
+        <input type = "text" id = "github" class = "input">
+        <label for="github">@yourusename</label>
+        <button>Generate My Ticket</button>
+      </div>
+    </section>
   </div>
 
   
