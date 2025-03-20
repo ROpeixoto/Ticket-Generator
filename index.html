@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+  <title>Frontend Mentor | Conference ticket generator</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+</head>
+
+<body>
+  <div class = "centro">
+    <h1>Your Journey to Coding Conf</h1>
+    <h1>2025 Starts Here!</h1>
+   <section id="1">
+    <p>Upload Avatar</p>
+
+      <div
+      id="drop_zone"
+      ondrop="dropHandler(event);"
+      ondragover="dragOverHandler(event);">
+      <div id="file-list"></div>
+      <p>Drag one or more files to this <i>drop zone</i>.</p>
+      </div>
+
+    <p>Full Name</p>
+    <input class = "join1">
+    <p>Email Address</p>
+    <input class = "join2">
+    <p>Github Username</p>
+    <input class = "join3">
+   </section>
+  </div>
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>

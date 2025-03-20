@@ -1,0 +1,28 @@
+body{
+    background-image: url('assets/images/background-desktop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.centro{
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section{
+    color: black;
+    padding: 20px;
+    width:100px auto;
+    height:auto;
+    background-color: blanchedalmond;
+}
+
+#drop_zone {
+    border: 5px solid blue;
+    width: 200px;
+    height: 100px;
+  }
+  
