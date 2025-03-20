@@ -27,4 +27,11 @@ function dragOverHandler(ev) {
     ev.preventDefault();
   }
   
-  
+function generateTicket() {
+  // Coletando dados inseridos no formulário
+  console.log("Ticket Generated");
+  const nome = document.getElementById('nome').value;
+  const email = document.getElementById('email').value;
+  const github = document.getElementById('github').value;
+  const file = document.getElementById('file').files[0]; // Arquivo carregado
+}

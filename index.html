@@ -21,35 +21,38 @@
   <div class = "imagens">
     <img src="assets/images/pattern-squiggly-line-top.svg" alt="Imagem" style="position:absolute;">
   </div>
+
+
   <div class = "centro">
     <img src="assets/images/logo-full.svg" alt="codingconf" style="padding: 1%;">
+
     <h1 style = "margin-bottom: 0%;">Your Journey to Coding Conf</h1>
     <h1 style="margin-top: 0%;">2025 Starts Here!</h1>
+
     <section id="1">
       <p>Upload Avatar</p>
-
       <div
         id="drop_zone"
+        class="drop-area"
         ondrop="dropHandler(event);"
         ondragover="dragOverHandler(event);">
           <div id="file-list"></div>
         <p>Drag and drop or click to upload.</p>
       </div>
+
       <p style="color: rgba(255, 255, 255, 0.3); font-size: smaller;">Upload your photo(JPG or PNG, max size: 500KB).</p>
 
       <div class= "input">
         <p>Full Name</p>
         <input type = "text"  id = "nome" class = "input">
-        <p>Email Address</p>
 
-        <input type = "text" id = "email" class = "input">
-        <label for="email">example@email.com</label>
+        <p>Email Address</p>
+        <input type = "text" id = "email" class = "input" placeholder="example@email.com">
 
         <p>Github Username</p>
-        <input type = "text" id = "github" class = "input">
-        <label for="github">@yourusename</label>
+        <input type = "text" id = "github" class = "input" placeholder="@yourusename">
       </div>
-      <button>Generate My Ticket</button>
+      <button type = "button"; onclick="generateTicket()">Generate my Ticket</button>
     </section>
   </div>
 

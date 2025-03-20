@@ -1,8 +1,8 @@
 html{
-    max-width: 1440px;
     width:100%;
     margin:0 auto;
 }
+
 body{
     background-image: url('assets/images/background-desktop.png');
     background-size: cover;
@@ -13,10 +13,12 @@ body{
 h1{
     font-size:50px;
 }
+
 div.imagens{
 display:flex;
 flex-direction: row-reverse;
 }
+
 .centro{
     color: aliceblue;
     display: flex;
@@ -38,15 +40,8 @@ div.input{
     position:relative;
 }
 
-div.input label{
-    font-size:20px;
-    margin: 10px;
-    margin-left: 15px;
-    position:absolute;
-    left:0;
-    cursor:text;
-    transition:0.5s ease-in-out;
-    color: white;
+div.input p{
+    font-size: 20px;
 }
 
 div.input .input{
