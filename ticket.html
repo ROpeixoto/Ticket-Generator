@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Ticket</title>
+  </head>
+  <body>
+    <div class="imagens">
+      <img
+        src="assets/images/pattern-squiggly-line-top.svg"
+        alt="Imagem"
+        style="position: absolute"
+      />
+    </div>
+    <div class="centro">
+      <img
+        src="assets/images/logo-full.svg"
+        alt="codingconf"
+        style="padding: 1%"
+      />
+      <h1 style="margin-bottom: 0px">
+        Congrats, <span id="ticket-nome-h"></span>!
+      </h1>
+      <h1 style="margin-top: 0px; margin-bottom: 5px">Your ticket is ready.</h1>
+      <div class="ticketup">
+        <p>We've emailed your ticket to</p>
+        <p><span id="ticket-email"></span> and will send updates in</p>
+        <p>the run up to the event.</p>
+      </div>
+
+      <section class="ticket">
+
+     <img src="assets\images\pattern-ticket.svg" alt="Fundo do Ticket" class="ticket-background">
+     <div class="dentroticket">
+     <p>Nome: <span id="ticket-nome"></span></p>
+      <p>Email: <span id="ticket-email"></span></p>
+      <p>GitHub: <span id="ticket-github"></span></p>
+      <p>Arquivo: <span id="ticket-file"></span></p>
+      <img id="ticket-image" src="" style="max-width: 50px; display: none" />
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <script>
+        // Recuperando os dados do localStorage
+        const ticketData = JSON.parse(localStorage.getItem("ticketData"));
+
+        if (ticketData) {
+          document.getElementById("ticket-nome-h").textContent =
+            ticketData.nome;
+          document.getElementById("ticket-nome").textContent = ticketData.nome;
+          document.getElementById("ticket-email").textContent =
+            ticketData.email;
+          document.getElementById("ticket-github").textContent =
+            ticketData.github;
+          document.getElementById("ticket-file").textContent =
+            ticketData.fileName;
+
+          if (ticketData.imageData) {
+            const imgElement = document.getElementById("ticket-image");
+            imgElement.src = ticketData.imageData;
+            imgElement.style.display = "block";
+          }
+        } else {
+          document.body.innerHTML = "<h2>Erro: Nenhum ticket encontrado.</h2>";
+        }
+      </script>
+    </div>
+  </body>
+</html>

@@ -66,4 +66,28 @@ div.input .input{
     height: 100px;
     padding: 30px;
   }
-  
+
+div.ticketup{
+    text-align: center;
+    margin-top: 0px;
+}
+
+section.ticket{
+
+    position: relative; /* Permite que os elementos internos sejam posicionados relativamente a esta seção */
+    overflow: hidden; /* Garante que a imagem não ultrapasse os limites do ticket */
+}
+
+div.dentroticket{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+}
+
+.ticket-background{
+    width: 100%; /* Faz a imagem cobrir toda a largura do ticket */
+    height: 100%; /* Faz a imagem cobrir toda a altura do ticket */
+    object-fit: cover;
+
+}
