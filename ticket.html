@@ -7,12 +7,9 @@
     <title>Ticket</title>
   </head>
   <body>
-    <div class="imagens">
-      <img
-        src="assets/images/pattern-squiggly-line-top.svg"
-        alt="Imagem"
-        style="position: absolute"
-      />
+    <div class="imagemtop">
+      <img src="assets/images/pattern-squiggly-line-top.svg" alt="Imagemtop" />
+    </div>
     </div>
     <div class="centro">
       <img
@@ -26,42 +23,54 @@
       <h1 style="margin-top: 0px; margin-bottom: 5px">Your ticket is ready.</h1>
       <div class="ticketup">
         <p>We've emailed your ticket to</p>
-        <p><span id="ticket-email"></span> and will send updates in</p>
+        <p>
+          <span style="color: rgb(185, 93, 60)" id="ticket-email"></span> and
+          will send updates in
+        </p>
         <p>the run up to the event.</p>
       </div>
 
       <section class="ticket">
+        <img
+          src="assets\images\pattern-ticket.svg"
+          alt="Fundo do Ticket"
+          class="ticket-background"
+          style="padding: 0px"
+        />
 
-     <img src="assets\images\pattern-ticket.svg" alt="Fundo do Ticket" class="ticket-background">
-     <div class="dentroticket">
-     <p>Nome: <span id="ticket-nome"></span></p>
-      <p>Email: <span id="ticket-email"></span></p>
-      <p>GitHub: <span id="ticket-github"></span></p>
-      <p>Arquivo: <span id="ticket-file"></span></p>
-      <img id="ticket-image" src="" style="max-width: 50px; display: none" />
-      </div>
-    </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <div class="dentroticket">
+          <img
+            src="assets/images/logo-full.svg"
+            alt="codingconf"
+            style="max-width: 100%; margin-left: 5%; margin-top: 5%"
+          />
+          <p style="font-size: small; margin-left: 25%">
+            Jan 31, 2025 / Austin, TX
+          </p>
+          <div class="container">
+            <div class="um">
+              <p
+                style="font-size: 20px; margin-bottom: 0%; margin-top: 0%"
+                id="ticket-nome"
+              ></p>
+              <div class="dois">
+                <img float="left" src="assets\images\icon-github.svg" alt="" />
+                <p id="ticket-github"></p>
+              </div>
+            </div>
+            <img
+              id="ticket-image"
+              src=""
+              style="
+                width: 70px;
+                border-radius: 5px;
+                max-height: 70px;
+                object-fit: cover;
+              "
+            />
+          </div>
+        </div>
+      </section>
 
       <script>
         // Recuperando os dados do localStorage
@@ -75,18 +84,19 @@
             ticketData.email;
           document.getElementById("ticket-github").textContent =
             ticketData.github;
-          document.getElementById("ticket-file").textContent =
-            ticketData.fileName;
-
           if (ticketData.imageData) {
             const imgElement = document.getElementById("ticket-image");
             imgElement.src = ticketData.imageData;
             imgElement.style.display = "block";
           }
-        } else {
-          document.body.innerHTML = "<h2>Erro: Nenhum ticket encontrado.</h2>";
         }
       </script>
+    </div>
+    <div class="imagembaixo">
+      <img
+        src="assets\images\pattern-squiggly-line-bottom-desktop.svg"
+        alt="Imagembaixo"
+      />
     </div>
   </body>
 </html>

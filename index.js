@@ -1,62 +1,42 @@
-let selectedFile = null; // Variável global para armazenar o arquivo
+let imagem = null; //  para armazenar o arquivo globalmente
 
-// Permite apenas JPG e JPEG
-function isValidImage(file) {
-  return (
-    file &&
-    (file.type === "image/jpeg" ||
-      file.name.toLowerCase().endsWith(".jpg") ||
-      file.name.toLowerCase().endsWith(".jpeg"))
-  );
+// permite só JPG e JPEG
+function validarImagem(arq) {
+  return arq && arq.type === "image/jpeg";
 }
 
 function dragOverHandler(ev) {
   console.log("File(s) in drop zone");
 
-  // Prevent default behavior (Prevent file from being opened)
-  ev.preventDefault();
+  ev.preventDefault();  // para nao abrir a imagem na tela
 }
 
-// Exibe a imagem na tela
-function displayImage(file) {
-  const reader = new FileReader();
-  reader.onload = function (e) {
-    const imgElement = document.getElementById("preview");
-    imgElement.src = e.target.result;
-    imgElement.style.display = "block"; // Torna a imagem visível
-  };
-  reader.readAsDataURL(file);
+// para exibir a pré-visualizacao na tela
+function showImage(arq) {
+  const img = document.getElementById("visualizar");
+  img.src = URL.createObjectURL(arq);
+  img.style.display = "block";
 }
 
 // Função unificada para processar o arquivo
-function handleFile(file) {
-  if (!isValidImage(file)) {
+function handleFile(arq) {
+  if (!validarImagem(arq)) {
     alert("Apenas imagens JPG/JPEG são permitidas!");
     return;
   }
-  selectedFile = file; // Salva o arquivo globalmente
-  displayImage(file); // Exibe a imagem
+  imagem = arq; // manda p variavel global
+  showImage(arq); // Exibe a imagem
 }
 
 // Quando o usuário arrasta e solta o arquivo
 function dropHandler(ev) {
-  ev.preventDefault();
-  let file = null;
+  ev.preventDefault(); // para nao abrir a imagem na tela
 
-  if (ev.dataTransfer.items) {
-    // Para navegadores modernos
-    [...ev.dataTransfer.items].forEach((item) => {
-      if (item.kind === "file") {
-        file = item.getAsFile();
-      }
-    });
-  } else {
-    // Para navegadores antigos
-    file = ev.dataTransfer.files[0];
-  }
+  // acessa o arquivo arrastado
+  const arq = ev.dataTransfer.files[0];
 
-  if (file) {
-    handleFile(file);
+  if (arq) {
+    handleFile(arq); // manda pra funçao abrir ou negar o arquivo
   } else {
     alert("Nenhum arquivo válido foi arrastado!");
   }
@@ -64,8 +44,8 @@ function dropHandler(ev) {
 
 // Quando o usuário seleciona manualmente um arquivo
 function fileSelected(event) {
-  const file = event.target.files[0];
-  handleFile(file);
+  const arq = event.target.files[0];
+  handleFile(arq);
 }
 
 // Gera o ticket e passa os dados para outra página
@@ -74,7 +54,7 @@ function generateTicket() {
   const email = document.getElementById("email").value;
   const github = document.getElementById("github").value;
 
-  if (!nome || !email || !github || !selectedFile) {
+  if (!nome || !email || !github || !imagem) {
     alert(
       "Por favor, preencha todos os campos e selecione uma imagem JPG/JPEG!"
     );
@@ -87,12 +67,11 @@ function generateTicket() {
       nome,
       email,
       github,
-      fileName: selectedFile.name,
       imageData: e.target.result, // Salva a imagem como Base64
     };
 
     localStorage.setItem("ticketData", JSON.stringify(ticketData));
     window.location.href = "ticket.html";
   };
-  reader.readAsDataURL(selectedFile);
+  reader.readAsDataURL(imagem);
 }
