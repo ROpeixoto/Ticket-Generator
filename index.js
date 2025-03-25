@@ -2,13 +2,13 @@ let imagem = null; //  para armazenar o arquivo globalmente
 
 // permite só JPG e JPEG
 function validarImagem(arq) {
-  return arq && arq.type === "image/jpeg";
+  return arq && (arq.type === "image/jpeg" || arq.type === "image/png");
 }
 
 function dragOverHandler(ev) {
-  console.log("File(s) in drop zone");
+  console.log("Pode Soltar");
 
-  ev.preventDefault();  // para nao abrir a imagem na tela
+  ev.preventDefault(); // para nao abrir a imagem na tela
 }
 
 // para exibir a pré-visualizacao na tela
@@ -18,17 +18,20 @@ function showImage(arq) {
   img.style.display = "block";
 }
 
-// Função unificada para processar o arquivo
+// função unificada para processar o arquivo
 function handleFile(arq) {
   if (!validarImagem(arq)) {
-    alert("Apenas imagens JPG/JPEG são permitidas!");
+    alert("Apenas imagens JPG/PNG são permitidas!");
+    return;
+  } else if (arq.size > 500 * 1024) {
+    alert("O arquivo deve ter no máximo 500KB!");
     return;
   }
   imagem = arq; // manda p variavel global
-  showImage(arq); // Exibe a imagem
+  showImage(arq); // exibe a imagem
 }
 
-// Quando o usuário arrasta e solta o arquivo
+//quando o usuario solta o arquivo
 function dropHandler(ev) {
   ev.preventDefault(); // para nao abrir a imagem na tela
 
@@ -50,28 +53,28 @@ function fileSelected(event) {
 
 // Gera o ticket e passa os dados para outra página
 function generateTicket() {
-  const nome = document.getElementById("nome").value;
+  const nome = document.getElementById("nome").value; //pegando todos os valores do input no index
   const email = document.getElementById("email").value;
   const github = document.getElementById("github").value;
 
   if (!nome || !email || !github || !imagem) {
-    alert(
-      "Por favor, preencha todos os campos e selecione uma imagem JPG/JPEG!"
-    );
+    alert("Preencha todos os campos e selecione uma imagem JPG/JPEG!");
     return;
   }
 
   const reader = new FileReader();
   reader.onload = function (e) {
+    // quando terminar de carregar a imagem, faz a funcao
     const ticketData = {
+      //cria objeto ticket, com todas as infos e a imagem
       nome,
       email,
       github,
-      imageData: e.target.result, // Salva a imagem como Base64
+      imageData: e.target.result,
     };
 
-    localStorage.setItem("ticketData", JSON.stringify(ticketData));
-    window.location.href = "ticket.html";
+    localStorage.setItem("ticketData", JSON.stringify(ticketData)); //salva os dados no localstorage
+    window.location.href = "ticket.html"; // leva para a janela do tkt
   };
-  reader.readAsDataURL(imagem);
+  reader.readAsDataURL(imagem); //transforma em url b64
 }

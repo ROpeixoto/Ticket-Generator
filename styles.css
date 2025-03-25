@@ -5,32 +5,26 @@ html {
 }
 
 body {
-  background-image: url("assets/images/pattern-lines.svg"), url(assets/images/background-desktop.png);
-  background-size: cover,cover;
-  background-position: center,center;
-  background-repeat: no-repeat,no-repeat;
+  background-image: url("assets/images/pattern-lines.svg"),
+    url(assets/images/background-desktop.png);
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed, fixed;
 }
 
 h1 {
   font-size: 50px;
 }
-
-div.imagemtop {
+/*imagem superior esquerda */
+ div.imagemtop {  
   position: absolute;
   top: 0;
   right: 0;
   z-index: 0;
 }
-
-div.imagembaixo {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 0;
-}
-
-.centro {
+/* alinhar todos os corpos de texto no meio */
+div.centro {
   position: relative;
   color: aliceblue;
   display: flex;
@@ -39,13 +33,30 @@ div.imagembaixo {
   z-index: 1;
 }
 
-section {
+section.secao {
   color: black;
   padding: 10px;
   width: 100px auto;
   height: auto;
   color: white;
   margin-left: 0px;
+}
+
+#drop_zone {
+  border: 2px;
+  border-color: rgba(255, 255, 255, 0.2);
+  background-color: hsla(245, 15%, 58%, 0.1);
+  border-radius: 10px;
+  border-style: dashed;
+  backdrop-filter: blur(1.5px);
+  width: 305px;
+  height: 100px;
+  padding: 30px;
+}
+
+.info {
+  display: inline-flex;
+  margin-top: 10px;
 }
 
 div.input {
@@ -68,26 +79,36 @@ div.input .input {
   border-radius: 10px;
 }
 
-#drop_zone {
-  border: 2px;
-  border-color: rgba(255, 255, 255, 0.2);
-  background-color: hsla(245, 15%, 58%, 0.1);
+button {
+  background-color: orange;
+  margin-top: 10px;
+  height: 40px;
   border-radius: 10px;
-  border-style: dashed;
-  backdrop-filter: blur(1.5px);
-  width: 305px;
-  height: 100px;
-  padding: 30px;
+  border: 0;
+  width: 370px;
+  font-size: medium;
+}
+
+div.imagembaixo {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
 }
 
 div.ticketup {
   text-align: center;
-  margin-top: 0px;
+  margin-top: 5px;
+  margin-bottom: 90px;
 }
 
+div.ticketup p {
+  margin: 5px 0 5px 0;
+}
 section.ticket {
-  position: relative; /* Permite que os elementos internos sejam posicionados relativamente a esta seção */
-  overflow: hidden; /* Garante que a imagem não ultrapasse os limites do ticket */
+  position: relative;
+  overflow: hidden;
 }
 
 div.dentroticket {
@@ -99,8 +120,8 @@ div.dentroticket {
 }
 
 .ticket-background {
-  width: 100%; /* Faz a imagem cobrir toda a largura do ticket */
-  height: 100%; /* Faz a imagem cobrir toda a altura do ticket */
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -124,8 +145,44 @@ div.dentroticket {
   white-space: nowrap; /* Impede a quebra de texto */
 }
 
-.dois {
+.git {
   display: flex;
   margin-left: 10%;
   color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 768px) {
+  body {
+    background-image: url("assets/images/pattern-lines.svg"),
+      url("assets/images/background-mobile.png"); /* Caminho para a imagem de mobile */
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    background-attachment: scroll, scroll;
+  }
+}
+
+@media (max-width: 590px) {
+  body {
+    background-image: url("assets/images/pattern-lines.svg"),
+      url("assets/images/background-mobile.png"); /* Caminho para a imagem de mobile */
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    background-attachment: scroll, scroll;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+  .ticket {
+    height: 200px;
+    width: 370px;
+    margin-right: 0px;
+  }
+
+  .container {
+    margin-top: 0%;
+  }
 }

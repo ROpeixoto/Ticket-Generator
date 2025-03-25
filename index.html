@@ -14,13 +14,8 @@
     <link rel="stylesheet" href="styles.css" />
 
     <title>Frontend Mentor | Conference ticket generator</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍
-     <div class = "test">
-    <img src = "assets\images\pattern-lines.svg" alt = "fundo" style = "position:absolute; width: 100%;">
-  </div>
-   -->
   </head>
+
   <body>
     <div class="imagemtop">
       <img src="assets/images/pattern-squiggly-line-top.svg" alt="Imagemtop" />
@@ -35,7 +30,7 @@
       <h1 style="margin-bottom: 0%">Your Journey to Coding Conf</h1>
       <h1 style="margin-top: 0%">2025 Starts Here!</h1>
 
-      <section id="1">
+      <section id="secao">
         <p>Upload Avatar</p>
         <div
           id="drop_zone"
@@ -50,26 +45,27 @@
           <input
             type="file"
             id="arq"
-            accept=".JPG, .jpeg"
+            accept=".JPG, .jpeg, .PNG"
             onchange="fileSelected(event)"
           />
           <p>Drag and drop or click to upload.</p>
         </div>
-        <p style="color: rgba(255, 255, 255, 0.3); font-size: smaller">
-          Upload your photo(JPG or PNG, max size: 500KB).
-        </p>
-
+        <div class="info">
+          <img src="assets\images\icon-info.svg" alt="info-icon" />
+          <span style="color: rgba(255, 255, 255, 0.3); font-size: smaller">
+            Upload your photo(JPG or PNG, max size: 500KB).
+          </span>
+        </div>
         <div class="input">
           <p>Full Name</p>
           <input type="text" id="nome" class="input" required />
 
           <p>Email Address</p>
           <input
-            type="text"
+            type="email"
             id="email"
             class="input"
             placeholder="example@email.com"
-            required
           />
 
           <p>Github Username</p>
@@ -90,6 +86,10 @@
     <div class="imagembaixo">
       <img
         src="assets\images\pattern-squiggly-line-bottom-desktop.svg"
+        srcset="
+          assets\images\pattern-squiggly-line-bottom-mobile-tablet.svg  800w,
+          assets\images\pattern-squiggly-line-bottom-desktop.svg       1500w
+        "
         alt="Imagembaixo"
       />
     </div>

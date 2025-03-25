@@ -10,7 +10,7 @@
     <div class="imagemtop">
       <img src="assets/images/pattern-squiggly-line-top.svg" alt="Imagemtop" />
     </div>
-    </div>
+
     <div class="centro">
       <img
         src="assets/images/logo-full.svg"
@@ -35,7 +35,6 @@
           src="assets\images\pattern-ticket.svg"
           alt="Fundo do Ticket"
           class="ticket-background"
-          style="padding: 0px"
         />
 
         <div class="dentroticket">
@@ -53,8 +52,8 @@
                 style="font-size: 20px; margin-bottom: 0%; margin-top: 0%"
                 id="ticket-nome"
               ></p>
-              <div class="dois">
-                <img float="left" src="assets\images\icon-github.svg" alt="" />
+              <div class="git">
+                <img src="assets\images\icon-github.svg" alt="icone-git" />
                 <p id="ticket-github"></p>
               </div>
             </div>
@@ -71,32 +70,34 @@
           </div>
         </div>
       </section>
-
-      <script>
-        // Recuperando os dados do localStorage
-        const ticketData = JSON.parse(localStorage.getItem("ticketData"));
-
-        if (ticketData) {
-          document.getElementById("ticket-nome-h").textContent =
-            ticketData.nome;
-          document.getElementById("ticket-nome").textContent = ticketData.nome;
-          document.getElementById("ticket-email").textContent =
-            ticketData.email;
-          document.getElementById("ticket-github").textContent =
-            ticketData.github;
-          if (ticketData.imageData) {
-            const imgElement = document.getElementById("ticket-image");
-            imgElement.src = ticketData.imageData;
-            imgElement.style.display = "block";
-          }
-        }
-      </script>
     </div>
     <div class="imagembaixo">
       <img
         src="assets\images\pattern-squiggly-line-bottom-desktop.svg"
+        srcset="
+          assets\images\pattern-squiggly-line-bottom-mobile-tablet.svg  800w,
+          assets\images\pattern-squiggly-line-bottom-desktop.svg       1500w
+        "
         alt="Imagembaixo"
       />
     </div>
+
+    <script>
+      // Recuperando os dados do localStorage
+      const ticketData = JSON.parse(localStorage.getItem("ticketData"));
+
+      if (ticketData) {
+        document.getElementById("ticket-nome-h").textContent = ticketData.nome;
+        document.getElementById("ticket-nome").textContent = ticketData.nome;
+        document.getElementById("ticket-email").textContent = ticketData.email;
+        document.getElementById("ticket-github").textContent =
+          ticketData.github;
+        if (ticketData.imageData) {
+          const imgElement = document.getElementById("ticket-image");
+          imgElement.src = ticketData.imageData;
+          imgElement.style.display = "block";
+        }
+      }
+    </script>
   </body>
 </html>
