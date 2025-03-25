@@ -43,6 +43,7 @@ section.secao {
 }
 
 #drop_zone {
+  position: relative;
   border: 2px;
   border-color: rgba(255, 255, 255, 0.2);
   background-color: hsla(245, 15%, 58%, 0.1);
@@ -52,6 +53,15 @@ section.secao {
   width: 305px;
   height: 100px;
   padding: 30px;
+}
+
+
+#arq {
+  position: absolute;
+  width: 305px;
+  height: 100px;
+  opacity: 0;
+  cursor: pointer;
 }
 
 .info {
