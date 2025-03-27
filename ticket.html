@@ -7,12 +7,12 @@
     <title>Ticket</title>
   </head>
 
-  <body>
+  <body onload="loadTicket()">
     <div class="imagemtop">
       <img src="assets/images/pattern-squiggly-line-top.svg" alt="Imagemtop" />
     </div>
 
-    <div class="centro">
+    <div class="center">
       <img
         src="assets/images/logo-full.svg"
         alt="codingconf"
@@ -37,8 +37,10 @@
           alt="Fundo do Ticket"
           class="ticket-background"
         />
-
         <div class="dentroticket">
+          <div class="numero-ticket">
+            <p>#01609</p>
+          </div>
           <img
             src="assets/images/logo-full.svg"
             alt="codingconf"
@@ -83,22 +85,6 @@
       />
     </div>
 
-    <script>
-      // Recuperando os dados do localStorage
-      const ticketData = JSON.parse(localStorage.getItem("ticketData"));
-
-      if (ticketData) {
-        document.getElementById("ticket-nome-h").textContent = ticketData.nome;
-        document.getElementById("ticket-nome").textContent = ticketData.nome;
-        document.getElementById("ticket-email").textContent = ticketData.email;
-        document.getElementById("ticket-github").textContent =
-          ticketData.github;
-        if (ticketData.imageData) {
-          const imgElement = document.getElementById("ticket-image");
-          imgElement.src = ticketData.imageData;
-          imgElement.style.display = "block";
-        }
-      }
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>

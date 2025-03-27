@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
     <link
       rel="icon"
@@ -20,7 +19,7 @@
     <div class="imagemtop">
       <img src="assets/images/pattern-squiggly-line-top.svg" alt="Imagemtop" />
     </div>
-    <div class="centro">
+    <div class="center">
       <img
         src="assets/images/logo-full.svg"
         alt="codingconf"
@@ -32,14 +31,11 @@
 
       <section id="secao">
         <p>Upload Avatar</p>
-        <div
-          id="drop_zone"
-          ondrop="dropHandler(event);"
-          ondragover="dragOverHandler(event);"
-        >
+        <div id="drop_zone" ondrop="dropHandler(event);">
           <img
             id="visualizar"
-            style="margin-left:110px;margin-top: 35px; position: absolute;display: none; max-width: 70px"
+            src=""
+            class="display"
             alt="Pré visu da imagem"
           />
           <input
@@ -56,6 +52,7 @@
             Upload your photo(JPG or PNG, max size: 500KB).
           </span>
         </div>
+
         <div class="input">
           <p>Full Name</p>
           <input type="text" id="nome" class="input" required />
@@ -66,6 +63,7 @@
             id="email"
             class="input"
             placeholder="example@email.com"
+            required
           />
 
           <p>Github Username</p>
@@ -94,6 +92,6 @@
       />
     </div>
 
-    <script src="index.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

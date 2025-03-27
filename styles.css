@@ -16,15 +16,17 @@ body {
 h1 {
   font-size: 50px;
 }
+
 /*imagem superior esquerda */
- div.imagemtop {  
+div.imagemtop {
   position: absolute;
   top: 0;
   right: 0;
   z-index: 0;
 }
+
 /* alinhar todos os corpos de texto no meio */
-div.centro {
+div.center {
   position: relative;
   color: aliceblue;
   display: flex;
@@ -55,6 +57,13 @@ section.secao {
   padding: 30px;
 }
 
+img.display {
+  margin-left: 110px;
+  margin-top: 35px;
+  position: absolute;
+  display: none;
+  max-width: 70px;
+}
 
 #arq {
   position: absolute;
@@ -90,13 +99,23 @@ div.input .input {
 }
 
 button {
-  background-color: orange;
+  background-color: hsl(7, 88%, 67%);
   margin-top: 10px;
   height: 40px;
   border-radius: 10px;
   border: 0;
   width: 370px;
   font-size: medium;
+}
+
+button:focus {
+  background-color: hsl(7, 71%, 60%);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: hsl(7, 71%, 60%);
+  cursor: pointer;
 }
 
 div.imagembaixo {
@@ -129,15 +148,24 @@ div.dentroticket {
   max-height: 200px;
 }
 
+div.numero-ticket{
+  position: absolute;
+  writing-mode: vertical-rl;
+  margin-left: 490px;
+  margin-top: 80px;
+  font-size: x-large;
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .ticket-background {
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
 .ticket {
   padding: 0px 0px 0px 0px;
 }
+
 .container {
   display: flex;
   flex-direction: row-reverse;
@@ -192,7 +220,25 @@ div.dentroticket {
     margin-right: 0px;
   }
 
+div.numero-ticket{
+  margin-left: 280px;
+  margin-top: 40px;
+}
+
   .container {
     margin-top: 0%;
   }
+}
+
+@media (max-width: 376px) {
+  .ticket {
+    width: 340px;
+  }
+
+  div.numero-ticket{
+    margin-left: 260px;
+    margin-top: 50px;
+    font-size: large;
+  }
+
 }
