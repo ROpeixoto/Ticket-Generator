@@ -148,7 +148,7 @@ div.dentroticket {
   max-height: 200px;
 }
 
-div.numero-ticket{
+div.numero-ticket {
   position: absolute;
   writing-mode: vertical-rl;
   margin-left: 490px;
@@ -220,10 +220,10 @@ div.numero-ticket{
     margin-right: 0px;
   }
 
-div.numero-ticket{
-  margin-left: 280px;
-  margin-top: 40px;
-}
+  div.numero-ticket {
+    margin-left: 280px;
+    margin-top: 40px;
+  }
 
   .container {
     margin-top: 0%;
@@ -235,10 +235,13 @@ div.numero-ticket{
     width: 340px;
   }
 
-  div.numero-ticket{
+  div.numero-ticket {
     margin-left: 260px;
     margin-top: 50px;
     font-size: large;
   }
-
+  #secao{
+    width:340px;
+margin-right:37px;
+  }
 }
